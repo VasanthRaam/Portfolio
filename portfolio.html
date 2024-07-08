@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    body{
+        background-color: rgb(4, 4, 48);
+        color:white;
+    }
+    #hom{
+        font-size: x-large;
+        font-weight: 600;
+        font-family:Arial, Helvetica, sans-serif;
+        padding-top: 20px;
+        color:white;
+    }
+    #nav2{
+        font-weight: 300;
+        font-family:Arial, Helvetica, sans-serif;
+        padding-top: 5px;
+        color:white;
+    }
+    #nav2 li a:hover,
+    #nav2 li a:focus,
+    #nav2 li a:active,
+    #nav2 li.active a {
+        background-color: black;
+        color: white;
+    }
+    #homepage{
+        padding-top: 30px;
+    }
+    #on {
+        margin-top: 200px;
+        margin-left: 110px;
+        font-size: 70px;
+        font-weight: bolder;
+    }
+    #tw {
+        color:rgb(166, 240, 63);
+        margin-left: 110px;
+        font-size: 70px;
+        font-weight: bolder;
+    }
+    h5{
+        margin-top: 20px;
+        margin-left: 120px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    #heading{
+        font-size: 50px;
+        font-weight: bold;
+        color:rgb(166, 240, 63);
+        text-decoration: underline;
+    }
+    #aboutpage{
+        margin-top:200px;
+        padding-top: 70px;
+        margin-left: 50%;
+    }
+    #self{
+        margin-right: 100px;
+        text-align: justify;
+        font-size: medium;
+        font-family: Arial;
+    }
+    #head{
+        padding-top:10px;
+        font-weight: bold;
+        color:rgb(166, 240, 63);
+    }
+    .fixed-btns {
+        top: 10px;
+        z-index: 1000;
+        padding-inline-start: 0%;
+    }
+    #projectpage{
+        margin-top:200px;
+        padding-top:50px;
+        margin-left: 100px;
+    }
+    .row div{
+        margin-top: 40px;
+        display:grid;
+        padding-top: 40px;
+        margin-right: 45px;
+        height:420px;
+        width:300px;
+        background: rgb(9, 9, 128);
+        border-radius: 10px;
+        transition: background 0.5s,transform 0.5s;
+    }
+    .row h4{
+        font-weight: 400;
+        font-size: xx-large;
+        padding-left: 20px;
+        padding-bottom: 10px;
+    }
+    .row p{
+        padding-top: 10px;
+        padding-left:20px;
+        padding-right:20px;
+        padding-bottom:20px;
+        text-align: justify;
+        font-size: medium;
+        font-family: Arial;
+    }
+    .row :hover{
+        background: rgb(43, 176, 234);
+        transform:translateY(-10px);
+    }
+    h4{
+        font-style: italic;
+        text-decoration: underline;
+    }
+    #certificatepage{
+        margin-top:200px;
+        padding-top:50px;
+        margin-left: 100px;
+    }
+    #contactpage{
+        margin-top:200px;
+        padding-top:50px;
+        margin-left: 100px;
+    }
+    #iii{
+        padding-top: 40px;
+    }
+    #contactpage p{
+        font-size: larger;
+    }
+    #contactpage a{
+        padding-right: 40px;
+    }
+    #type,#cs,#hr,#uf,#cpp{
+        display:none;
+    }
+    @media (max-width: 768px) {
+        #on, #tw {
+            margin-left: 0;
+            text-align: center;
+            font-size: 30px;
+        }
+        #heading{
+            font-size: 30px;
+        }
+        h5 {
+            margin-left: 0;
+            text-align: center;
+            font-size: 24px;
+        }
+        #chan{
+            font-size: 17px;
+        }
+        .row h4{
+            font-weight: 200;
+            font-size: large;
+        }
+        #aboutpage {
+            margin-left: 40px;
+            margin-right: 0;
+            padding-top: 150px;
+        }
+        #self{
+            margin-right: 20px;
+            text-align: justify;
+            font-size: medium;
+            font-family: Arial;
+        }
+        #projectpage{
+            margin-left: 50px;
+            padding-top: 150px;
+        }
+        #certificatepage{
+            margin-left: 65px;
+            padding-top: 150px;
+        }
+
+        .fixed-btns {
+            display: inline-block;
+            justify-content: center;
+            margin-top: 20px;
+            
+        }
+         #contactpage {
+            margin-top: 150px;
+            margin-left: 50px;
+            padding-top: 30px;
+        }
+        #icons{
+            display:inline-flex;
+            margin-top:20px;
+        }
+    }
+</style>
+
+<script>
+    $(document).ready(function(){
+        $('#skillBtn').on('click', function(){
+            $('#edu').collapse('hide');
+        });
+        $('#eduBtn').on('click', function(){
+            $('#skill').collapse('hide');
+        });
+        $("#c1").hover(function(){
+            $("#type").slideToggle("slow");
+          });
+        $("#c2").hover(function(){
+            $("#cpp").slideToggle("slow");
+          });  
+        $("#c3").hover(function(){
+            $("#uf").slideToggle("slow");
+          }); 
+        $("#c4").hover(function(){
+            $("#cs").slideToggle("slow");
+          });   
+        $("#c5").hover(function(){
+            $("#hr").slideToggle("slow");
+        });    
+    });
+</script>
+
+<body>
+
+    <!--Navigation bar-->
+
+    <nav class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header" id="span">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav1" style="background-color:black">
+                    <span class="icon-bar" style="background-color:white"></span>
+                    <span class="icon-bar" style="background-color:white"></span>
+                    <span class="icon-bar" style="background-color:white"></span>
+                </button>
+                <a class="navbar-brand" id="hom" href="#homepage">| PORTFOLIO</a>
+            </div>
+            <div class="collapse navbar-collapse" id="nav1">
+                <ul class="nav navbar-nav navbar-right" id="nav2">
+                    <li id="about"><a href="#aboutpage" id="about" style="color:white">ABOUT</a></li>
+                    <li id="project"><a href="#projectpage" id="project" style="color:white">PROJECTS</a></li>
+                    <li id="cert"><a href="#certificatepage" id="cert" style="color:white">CERTIFICATES</a></li>
+                    <li id="cont"><a href="#contactpage" id="cont" style="color:white">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="cont">
+    <!--Home Page-->
+
+    <div id="homepage">
+        <h3 id="on">Hello! I'm</h3>
+        <h3 id="tw">Vasanth Raam V.G</h3>
+        <h5>Front end Developer | B.Tech CSE @ SASTRA</h5>
+    </div>
+
+    <!--About Page-->
+    <div id="aboutpage">
+        <h3 id="chan">INTRODUCTION</h3>
+        <h3 id="heading">Overview</h3>
+        <p id="self">An engineering student excelling in Front-End Development and Python, seamlessly integrating design and
+            technical expertise to create intuitive web interfaces. A dedicated problem-solver driven by innovation, actively
+            seeking impactful projects to contribute expertise and expand skills in both areas.</p>
+                <div class="fixed-btns">
+                    <a href="#skill" class="btn btn-info" data-toggle="collapse" id="skillBtn">Skills</a>
+                    <a href="#edu" class="btn btn-info" data-toggle="collapse" id="eduBtn">Education</a>
+                </div>
+                    <div id="skill" class="collapse">
+                        <p id="head">Languages:</p>
+                        <p>C++, Java (Basics), Python, HTML, CSS, JavaScript.</p>
+                        <p id="head">Frameworks:</p>
+                        <p>Bootstrap, jQuery, Tkinter, Django.</p>
+                        <p id="head">Data Management:</p>
+                        <p>Data Structures and Algorithms (Basics), Database Management System (SQL).</p>
+                        <p id="head">Soft Skills:</p>
+                        <p>Critical Thinking, Adaptability</p>            
+                    </div>
+                    <div id="edu" class="collapse">
+                        <p id="head">SASTRA Deemed to be University</p>
+                        <p>B.Tech Computer Science and Engineering</p>
+                        <p>CGPA : 7.18</p>
+                        <p id="head">Kamala Niketan Montessori School</p>
+                        <p>10th and 12th Standard</p>
+                        <p>80.6% in AISSCE</p>
+                        <p>85.4% in AISSE</p>
+                    </div>
+
+    </div>
+    <!--Project page-->
+
+    <div id="projectpage" class="container">
+        <h3 id="chan">WHAT I HAVE DONE SO FAR</h3>
+        <h3 id="heading">Projects</h3>
+        <div class="row">
+            <div class="col-lg-3">
+                <h4>Jump Counter</h4>
+                <p>A Python program is developed using OpenCV and the Mediapipe module to access the camera and utilize a
+                holistic approach for tracking. The program counts the number of jumps performed by the user, registering a jump
+                only when it meets a specified condition.</p>
+            </div> 
+            <div class="col-lg-3">
+                <h4>Prediction of Air Quality Index</h4>
+                <p>Utilizing ML techniques, the dataset from the CPCB undergoes preprocessing through imputation and various ML methods. The preprocessed dataset is then
+                    subjected to multiple wrapper feature selection algorithms to identify the most suitable features for the project.</p>
+            </div> 
+            <div class="col-lg-3">
+                <h4>Web Portal for an Institution</h4>
+                <p>A web portal is designed using HTML, CSS, JavaScript as a front end. Several frameworks includes Bootstrap and
+                    jQuery were used in order to focus on the specific aspects of the project rather than building everything from
+                    scratch and helps in reducing time.</p>
+            </div> 
+        </div>
+    
+    </div>
+
+    <!--Certificate page-->
+
+    <div id="certificatepage">
+        <h3 id="heading">Certificates</h3>
+        <div class="row">
+            <div class="col-lg-3" id="c1">
+                <h4>Typewriting</h4>
+                <p id="type">I've completed junior and senior level grade in 2 languages (English and Tamil) with distinction</p>
+            </div> 
+            <div class="col-lg-3" id="c2">
+                <h4>C++ Programming Essentials</h4>
+                <p id="cpp">I mastered all the basics of c++ and applying this knowledge in solving DSA Problems in Leetcode</p>
+            </div> 
+            <div class="col-lg-3" id="c3">
+                <h4>Ultimate Front-end bootcamp</h4>    
+                <p id="uf">After completing this course i gained immense knowledge on front end development which helps me getting intrest into it and crafting some intuitive websites </p>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-lg-3" id="c4">
+                <h4>Python Programming</h4>
+                <p id="cs">A virtual internship is conducted by CodSoft where i applied my knowledge in order to complete the task provided by them</p>
+            </div> 
+            <div class="col-lg-3" id="c5">
+                <h4>Hackerrank</h4>
+                <p id="hr">I've solved python problems in hackerrank and earned gold batch by solving more problem which helps to gain immense knowledge in python</p>
+            </div>   
+        </div>
+    </div>
+
+    <!--Contact page-->
+
+    <div id="contactpage">
+        <h3 id="heading">Contact</h3>
+        <p id="iii">Mobile: <a href="tel:7598453733">7598453733</a></p>
+        <p>Email: <a href="mailto:vasanthraam1@gmail.com">vasanthraam1@gmail.com</a></p>
+        <div id="icons">
+            <a href="https://www.instagram.com/r_o_c_k_y_03/"><img src="instagram.png" height="20px" width="20px">Instagram</a>
+            <a href="https://www.linkedin.com/in/vasanth-raam-04116b1b2/"><img src="linkedin.png" height="20px" width="20px">LinkedIn</a>
+            <a href="https://github.com/VasanthRaam"><img src="github.png" height="20px" width="20px">GitHub</a>
+            <a href="https://www.hackerrank.com/profile/vasanthraam1"><img src="hacker.png" height="20px" width="20px">Hackerrank</a>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+</div>
+</body>
+</html>

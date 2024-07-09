@@ -112,8 +112,8 @@
         font-size: medium;
         font-family: Arial;
     }
-    .row :hover{
-        background: rgb(43, 176, 234);
+    .row .col-lg-3:hover{
+        background: rgb(135, 206, 250);
         transform:translateY(-10px);
     }
     h4{
@@ -141,6 +141,12 @@
     }
     #type,#cs,#hr,#uf,#cpp{
         display:none;
+    }
+    #res{
+        margin-left:400px;
+    }
+    .btn{
+        width: 170px;
     }
     @media (max-width: 768px) {
         #on, #tw {
@@ -197,6 +203,11 @@
         #icons{
             display:inline-flex;
             margin-top:20px;
+        }
+        #res{
+            display: block;
+            margin-left:-350px;
+            margin-top:100px;
         }
     }
 </style>
@@ -344,7 +355,7 @@
             </div> 
             <div class="col-lg-3" id="c5">
                 <h4>Hackerrank</h4>
-                <p id="hr">I've solved python problems in hackerrank and earned gold batch by solving more problem which helps to gain immense knowledge in python</p>
+                <p id="hr">I've cleared python certification test conducted by hackerrank</p>
             </div>   
         </div>
     </div>
@@ -360,6 +371,8 @@
             <a href="https://www.linkedin.com/in/vasanth-raam-04116b1b2/"><img src="linkedin.png" height="20px" width="20px">LinkedIn</a>
             <a href="https://github.com/VasanthRaam"><img src="github.png" height="20px" width="20px">GitHub</a>
             <a href="https://www.hackerrank.com/profile/vasanthraam1"><img src="hacker.png" height="20px" width="20px">Hackerrank</a>
+            <br><br><br><br><br>
+            <a id="res" href="RESUME.pdf" download class="btn btn-primary">Download Resume <span class="glyphicon glyphicon-download-alt"></span></a>
         </div>
     </div>
     <br><br><br><br><br><br><br><br><br>

@@ -13,6 +13,11 @@
         background-color: rgb(4, 4, 48);
         color:white;
     }
+    form{
+        margin-left:100px;
+        margin-right:700px;
+        
+    }
     #hom{
         font-size: x-large;
         font-weight: 600;
@@ -78,7 +83,7 @@
     }
     .fixed-btns {
         top: 10px;
-        z-index: 1000;
+        z-index: 0;
         padding-inline-start: 0%;
     }
     #projectpage{
@@ -113,7 +118,7 @@
         font-family: Arial;
     }
     .row .col-lg-3:hover{
-        background: rgb(52, 224, 84);
+        background: rgba(52, 224, 83, 0.705);
         transform:translateY(-10px);
     }
     h4{
@@ -159,9 +164,18 @@
     #drive{
         margin-bottom:30px;
     }
-    @media (max-width: 768px) {
+    @media only screen and (max-width:768px) {
+        body{
+            width: 100vw;
+            overflow-x: hidden;
+        }
+        .navbar {
+            width: 100%;
+            overflow: hidden;
+          }
         #on, #tw {
-            margin-left: 0;
+            margin-left: 20px;
+            margin-right: 20px;
             text-align: center;
             font-size: 30px;
         }
@@ -169,7 +183,7 @@
             font-size: 30px;
         }
         h5 {
-            margin-left: 0;
+            margin-left: 30px;
             text-align: center;
             font-size: 24px;
         }
@@ -220,6 +234,12 @@
             margin-left:-350px;
             margin-top:100px;
         }
+        form{
+            margin-left:20px;
+            margin-right:100px;
+            
+        }
+
     }
 </style>
 
@@ -246,7 +266,11 @@
         $("#c5").hover(function(){
             $("#hr").slideToggle("slow");
         });    
+        $("#sub").click(function(){
+            form.preventDefault()='none';
+        });    
     });
+
 </script>
 
 <body>
@@ -335,7 +359,7 @@
                 <p>Utilizing ML techniques, the dataset from the CPCB undergoes preprocessing through imputation and various ML methods. The preprocessed dataset is then
                     subjected to multiple wrapper feature selection algorithms to identify the most suitable features for the project.</p>
                     <br><br>
-                <a id="drive" href="https://drive.google.com/drive/folders/1A59lNS2tybseLiEoxJf9blj27zXeoQCn?usp=drive_link">Drive</a>
+                <a id="drive" href="https://drive.google.com/drive/u/0/folders/1A59lNS2tybseLiEoxJf9blj27zXeoQCn">Drive</a>
             </div> 
             <div class="col-lg-3">
                 <h4>Web Portal for an Institution</h4>
@@ -361,7 +385,7 @@
                 <a href="https://drive.google.com/drive/u/0/folders/1GVw05Hea9Bq2AwtMl0cQuhZsHC2QibnD">View Certificate</a>
             </div> 
             <div class="col-lg-3" id="c2">
-                <h4>C++ Programming </h4>
+                <h4>C++ Programming Essentials</h4>
                 <p id="cpp">I mastered all the basics of c++ and applying this knowledge in solving DSA Problems in Leetcode</p>
                 <br><br>
                 <a href="c++ cert.pdf">View Certificate</a>
@@ -404,7 +428,38 @@
             <a id="res" href="RESUME.pdf" download class="btn btn-primary">Download Resume <span class="glyphicon glyphicon-download-alt"></span></a>
         </div>
     </div>
-    <br><br><br><br><br><br><br><br><br>
+    <br><br><br>
+    <div id="sharing">
+        <form role="form" name="submit-to-google-sheet">
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" placeholder="Your Name" required name="Name" style="background:rgb(2, 2, 54);color:#fff">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="email" placeholder="Your Email" required name="Email" style="background:rgb(2, 2, 54);color:#fff"> 
+            </div>
+            <div class="form-group">
+                <textarea id="message" class="form-control" placeholder="Your thoughts" rows="4" required name="Thoughts" style="background:rgb(2, 2, 54);color:#fff"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success" id="sub" >Submit</button>
+            </div>
+        </form>
+    </div>
+    <br><br><br><br><br><br>
 </div>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxAvZKMCX4GzvDCw_zFNcZWgEnw2zMNPOe0fJhVMI2KUnbN7kYNRkrzbZiHk-VJAN9b5w/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            form.reset()
+        }
+        )
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 </body>
 </html>

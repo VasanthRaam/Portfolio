@@ -10,7 +10,7 @@
     <!--<link rel="stylesheet" type="text/css" href="style.css">-->
 </head>
 <!--<script src="port.js"></script> -->
-<body>
+<body data-spy="scroll">
 
     <!--Navigation bar-->
 
@@ -47,9 +47,10 @@
     <div id="aboutpage">
         <h3 id="chan">INTRODUCTION</h3>
         <h3 id="heading">Overview</h3>
-        <p id="self">An engineering student excelling in Front-End Development, seamlessly integrating design and
-            technical expertise to create intuitive web interfaces. A dedicated problem-solver driven by innovation, actively
-            seeking impactful projects to contribute expertise and expand skills in both areas.</p>
+        <p id="self">A front-end developer passionate about building user-friendly websites. 
+            Skilled at solving problems and turning ideas into excellent digital experiences. 
+            Always eager to learn new things and improve skills. Enjoys working on creative and challenging projects. 
+            Committed to delivering high-quality results.</p>
                 <div class="fixed-btns">
                     <a href="#skill" class="btn btn-info" data-toggle="collapse" id="skillBtn">Skills</a>
                     <a href="#edu" class="btn btn-info" data-toggle="collapse" id="eduBtn">Education</a>
@@ -171,13 +172,13 @@
     <div id="sharing">
         <form role="form" name="submit-to-google-sheet">
             <div class="form-group">
-                <input type="text" class="form-control" id="name" placeholder="Your Name" required name="Name" style="background:rgb(2, 2, 54);color:#fff">
+                <input type="text" class="form-control" id="name" placeholder="Your Name" required name="Name" style="background:black;color:#fff">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" id="email" placeholder="Your Email" required name="Email" style="background:rgb(2, 2, 54);color:#fff"> 
+                <input type="text" class="form-control" id="email" placeholder="Your Email" required name="Email" style="background:black;color:#fff"> 
             </div>
             <div class="form-group">
-                <textarea id="message" class="form-control" placeholder="Your thoughts" rows="4" required name="Thoughts" style="background:rgb(2, 2, 54);color:#fff"></textarea>
+                <textarea id="message" class="form-control" placeholder="Your thoughts" rows="4" required name="Thoughts" style="background:black;color:#fff"></textarea>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-success" id="sub" >Submit</button>
@@ -244,12 +245,27 @@
     #nav2 li a{
         color:black;
     }
+    #nav2 li a::after{
+        margin-bottom:10px;
+        content:'';
+        width:0;
+        height:3px;
+        background: white;
+        position:absolute;
+        left:0;
+        bottom:-6px;
+        transition : 1s;
+    }
+    #nav2 li a:hover::after{
+        width:100%;
+    }
     #nav2 li a:hover,
     #nav2 li a:focus,
     #nav2 li a:active,
     #nav2 li.active a {
-        background-color: black;
+        background-color: rgba(0,0, 0, 0.7);
         color: white;
+        border-radius: 7.5%;
     }
     #homepage{
         padding-top: 30px;
@@ -390,6 +406,9 @@
         margin-left:100px;
         margin-right:700px;
     }
+    .form-group{
+        color: black;
+    }
     @media only screen and (max-width:600px) {
         
         #on, #tw {
@@ -415,7 +434,7 @@
             font-size: large;
         }
         #aboutpage {
-            margin-top:250px;
+            margin-top:150px;
             margin-left: 20px;
             margin-right: 0;
             padding-top: 150px;
